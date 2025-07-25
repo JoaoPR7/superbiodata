@@ -1,11 +1,15 @@
 {
   "configs": [
-    "super-biodata-sapi.xml"
+    "super-biodata-sapi.xml",
+    "global.xml",
+    "get-cars.xml",
+    "get-bio-{id}.xml",
+    "health.xml"
   ],
   "secureProperties": [],
   "supportedJavaVersions": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:superbiodata:1.0.0",
+  "name": "bcbc226b-4441-47d6-a59d-1939d9796bb5:superbiodata:1.0.6",
   "minMuleVersion": "4.6.14",
   "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
@@ -13,7 +17,16 @@
     "attributes": {
       "exportedPackages": [],
       "exportedResources": [
+        "application-types.xml",
+        "get-bio-{id}.xml",
+        "get-cars.xml",
+        "global.xml",
+        "health.xml",
         "log4j2.xml",
+        "properties/config-dev.yaml",
+        "properties/config-PROD.yaml",
+        "properties/config-training.yaml",
+        "properties/properties.yaml",
         "super-biodata-sapi.xml"
       ]
     }

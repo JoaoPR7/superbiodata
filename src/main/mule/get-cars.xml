@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="get-cars" doc:id="56544531-f429-4454-b08d-857d3a22fa78" >
+		<logger level="INFO" doc:name="Logger de Chegada" doc:id="8f163f64-9065-4575-b60a-93277eaafbd2" message="Chegou aqui!"/>
+		<ee:transform doc:name="Transform Message">
+            <ee:message>
+                <ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+  carro: 'resource::' ++ p("api.groupId") ++ ':' ++ p("api.artifactId") ++ ':' ++ p("api.version") ++ ':raml:zip:super-biodata-sapi.raml',
+  ambiente: p("tls.keystore.teste"),
+  id: "DC0002",
+  name: "Ferrari",
+  fullname: "Ferrari do Caralho!",
+  birthplace: "09/07/1991",
+  base: "-",
+  publisher: "Joca",
+  occupation: "Fazer nada"
+} as Object {encoding: "UTF-8", mediaType: "application/json"}]]></ee:set-payload>
+            </ee:message>
+        </ee:transform>
+		<logger level="INFO" doc:name="Logger de saida" doc:id="6b3930e9-c117-4d9d-99f8-33fcd362633a" message="já acabou!"/>
+	</flow>
+</mule>

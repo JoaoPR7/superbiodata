@@ -1,0 +1,9 @@
+api:
+  port: '8081'
+  majorVersion: 'v1'
+  groupId: '${api.groupId}'
+  artifactId: '${api.artifactId}'
+  version: '${api.version}'
+  specification: 'resource::${api.groupId}:${api.artifactId}:${api.version}:raml:zip:super-biodata-sapi.raml'
+  
+  #'resource::bcbc226b-4441-47d6-a59d-1939d9796bb5:super-biodata-sapi:2.0.0:raml:zip:super-biodata-sapi.raml'

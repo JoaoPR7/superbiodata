@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	
+	<flow name="api-liveness-flow" doc:id="794ff947-9f52-493e-a52a-7a74c21ec7d5">
+        <http:listener doc:name="Listener" doc:id="7ced30d0-ac4f-496a-94c1-48b0f590c993" config-ref="super-biodata-sapi-httpListenerConfig" path="/live">
+            <http:error-response>
+                <http:body><![CDATA[DEAD]]></http:body>
+            </http:error-response>
+        </http:listener>
+        <set-payload value="LIVE" doc:name="LIVE" doc:id="4a29f2d0-a626-4c12-b122-721fe18dbf31" />
+    </flow>
+	</mule>
