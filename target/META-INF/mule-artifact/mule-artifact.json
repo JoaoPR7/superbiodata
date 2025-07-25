@@ -9,7 +9,7 @@
   "secureProperties": [],
   "supportedJavaVersions": [],
   "redeploymentEnabled": true,
-  "name": "bcbc226b-4441-47d6-a59d-1939d9796bb5:superbiodata:1.0.6",
+  "name": "bcbc226b-4441-47d6-a59d-1939d9796bb5:superbiodata:1.0.7",
   "minMuleVersion": "4.6.14",
   "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
